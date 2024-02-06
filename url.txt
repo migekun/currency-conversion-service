@@ -1,15 +1,16 @@
-http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+Currency exchange service
+http://localhost:8000/currency-exchange/from/USD/to/INR
 
+Currency conversion service
+http://localhost:8000/currency-conversion/from/USD/to/INR/quantity/10
 
+Creamos otra instancia del currencyExchange con la misma configuración que la
+original, pero añadiendo un VMoption -Dserver.port=8001 para cambiar el puerto, ya que la VMoption tiene
+preferencia sobre el application.properties de la instancia.
+http://localhost:8001/currency-conversion/from/USD/to/INR/quantity/10
+http://localhost:8001/currency-conversion-feign/from/USD/to/INR/quantity/10
 
-Response Structure
-{
-  "id": 10001,
-  "from": "USD",
-  "to": "INR",
-  "conversionMultiple": 65.00,
-  "quantity": 10,
-  "totalCalculatedAmount": 650.00,
-  "environment": "8000 instance-id"
-}
+Eureka
+http://localhost:8761/
+
 
